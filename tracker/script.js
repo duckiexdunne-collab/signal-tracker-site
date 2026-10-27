@@ -276,8 +276,20 @@
     if (location.hash.startsWith('#task-')) jumpTo(decodeURIComponent(location.hash.slice(6)));
   }
 
-  fetch('data.json', {cache:'no-cache'})
-    .then(response => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
+  // Public milestone data lives in GitHub. Keep the bundled copy as a fallback
+  // so the tracker still works if GitHub is unavailable or a host caches badly.
+  const dataSources = [
+    'https://raw.githubusercontent.com/duckiexdunne-collab/signal-tracker-site/main/tracker/data.json',
+    'data.json'
+  ];
+  const loadData = (source, remaining) => fetch(source, {cache:'no-store'})
+    .then(response => { if (!response.ok) throw new Error(`${source}: HTTP ${response.status}`); return response.json(); })
+    .catch(error => {
+      if (!remaining.length) throw error;
+      console.warn('Tracker data source unavailable; trying fallback:', error);
+      return loadData(remaining[0], remaining.slice(1));
+    });
+  loadData(dataSources[0], dataSources.slice(1))
     .then(data => { if (!Array.isArray(data.items) || !data.items.length || !Array.isArray(data.stages) || !Array.isArray(data.streams)) throw new Error('Invalid project data'); project = data; initialise(); })
     .catch(error => {
       console.error('Project tracker could not load:', error);
