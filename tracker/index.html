@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b1115">
+  <meta name="description" content="Follow the making of Wight Signal: an evidence-based development checklist for the Isle of Wight DayZ map. Explore plans, builds, tests and the work still ahead.">
+  <title>Project Tracker — Wight Signal</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Wight Signal — Project Tracker">
+  <meta property="og:description" content="Follow the Isle of Wight DayZ map: plans, compiled builds, engine checks and the work still ahead.">
+  <meta property="og:image" content="https://acheilus.uk/signal/assets/coast.webp">
+  <meta property="og:image:alt" content="Wight Signal concept artwork of the Needles coastline">
+  <link rel="stylesheet" href="styles.css?v=20261025-2">
+  <script src="script.js?v=20261025-2" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#checklist">Skip to checklist</a>
+  <header class="site-header">
+    <a href="../" class="brand" aria-label="Wight Signal home"><span class="brand-symbol" aria-hidden="true">⌁</span><span><strong>WIGHT <em>SIGNAL</em></strong><small>ISLE OF WIGHT · DAYZ</small></span></a>
+    <nav aria-label="Tracker navigation"><a href="../">The island <span aria-hidden="true">↗</span></a><a class="active" href="#checklist">Project tracker</a></nav>
+    <span class="development-label"><span class="live-dot"></span> In development</span>
+  </header>
+
+  <main>
+    <section class="hero wrap" aria-labelledby="pageTitle">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="small-line"></span> THE DEVELOPMENT LOG / 001</p>
+        <h1 id="pageTitle">THE ISLAND.<br><span>IN PROGRESS.</span></h1>
+        <p class="hero-lead">A real place. A world to build. Follow every road, village and little detail taking shape in Wight Signal.</p>
+        <div class="hero-meta"><span><span class="dot muted-dot"></span> 70% horizontal map scale</span><span id="auditDate">Loading audit date…</span><span id="updateDate" hidden></span></div>
+      </div>
+      <aside class="field-card" aria-label="Current development snapshot">
+        <div class="field-photo"><span>ISLAND VISION <span>CONCEPT ARTWORK</span></span></div>
+        <div class="field-note"><div class="field-label"><span class="live-dot"></span> LATEST RECORDED PREVIEW</div><strong id="buildName">Development preview</strong><p id="buildSummary">Reading the latest published project audit…</p></div>
+      </aside>
+    </section>
+
+    <section class="wrap evidence-overview" aria-labelledby="evidenceHeading">
+      <div class="section-caption"><h2 id="evidenceHeading">Progress, with the receipts.</h2><p>Plans, builds and engine checks each have their own stage.</p></div>
+      <div class="stat-grid">
+        <button class="stat-card" data-stat="all"><span class="stat-top"><span>THE WHOLE PICTURE</span><span aria-hidden="true">↗</span></span><strong id="totalCount">—</strong><span class="stat-name">tracked checklist items</span></button>
+        <button class="stat-card" data-stat="built"><span class="stat-top"><span class="color-built">BUILT / COMPILED</span><span aria-hidden="true">↗</span></span><strong id="builtCount">—</strong><span class="stat-name">items at the compiled stage</span></button>
+        <button class="stat-card" data-stat="tested"><span class="stat-top"><span class="color-tested">IN-ENGINE CHECKED</span><span aria-hidden="true">↗</span></span><strong id="testedCount">—</strong><span class="stat-name">items with scoped engine evidence</span></button>
+        <button class="stat-card attention-stat" data-stat="blocked"><span class="stat-top"><span>NEEDS A LITTLE WORK</span><span aria-hidden="true">↗</span></span><strong id="blockedCount">—</strong><span class="stat-name">items currently blocked</span></button>
+      </div>
+      <div class="evidence-strip"><div class="stage-bar" id="stageBar" aria-hidden="true"></div><div class="stage-legend" id="stageLegend"></div><p class="stage-note">A built item is still a candidate for testing. Engine checks apply to the recorded sample; approval applies to a specific version. These counts are not an overall completion percentage.</p></div>
+    </section>
+
+    <section class="wrap focus-section" aria-labelledby="focusHeading">
+      <div class="section-caption"><h2 id="focusHeading"><span class="red-marker"></span> On the workbench</h2><p>Three things that help move the island forward.</p></div>
+      <div class="focus-grid" id="focusCards"></div>
+    </section>
+
+    <section class="checklist-section" id="checklist" aria-labelledby="checklistHeading">
+      <div class="wrap tracker-layout">
+        <aside class="sidebar">
+          <div class="sidebar-heading"><span>WORKSTREAMS</span><span>10</span></div>
+          <nav id="workstreams" aria-label="Filter by workstream"></nav>
+          <div class="sidebar-note"><span class="note-icon" aria-hidden="true">⌁</span><h3>Small steps. Real evidence.</h3><p>Every item has a clear finish line, an evidence note and a next action. Open a row to see what it needs.</p><a href="#howToRead">How to read this board <span aria-hidden="true">↗</span></a></div>
+        </aside>
+
+        <div class="checklist-main">
+          <div class="list-heading"><div><p class="eyebrow">THE MASTER CHECKLIST</p><h2 id="checklistHeading">Follow the build.</h2></div><button id="shareView" class="utility-button" type="button"><span aria-hidden="true">↗</span> Share view</button></div>
+          <p class="list-intro">Explore the whole project or find the bits you care about. Bookmark items to keep your own little watchlist.</p>
+          <div class="search-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 5 5"></path></svg><label class="visually-hidden" for="searchInput">Search the project checklist</label><input id="searchInput" type="search" placeholder="Search roads, settlements, the Needles…" autocomplete="off"><kbd aria-hidden="true">/</kbd></div>
+          <div class="filter-row">
+            <div class="quick-views" role="group" aria-label="Quick filters"><button class="view-button active" data-view="all" aria-pressed="true">All work</button><button class="view-button" data-view="built" aria-pressed="false">Built & checked</button><button class="view-button" data-view="attention" aria-pressed="false">Needs attention</button><button class="view-button" data-view="saved" aria-pressed="false">My watchlist <span id="savedCount">0</span></button></div>
+            <div class="select-filters"><label class="visually-hidden" for="statusFilter">Evidence stage</label><select id="statusFilter"><option value="all">Every stage</option></select><label class="visually-hidden" for="sortFilter">Sort checklist</label><select id="sortFilter"><option value="workstream">By workstream</option><option value="attention">Attention first</option><option value="stage">By evidence stage</option></select></div>
+          </div>
+          <div class="mobile-stream"><label for="mobileStream">Workstream</label><select id="mobileStream"><option value="all">All workstreams</option></select></div>
+          <div class="results-toolbar"><p id="resultsCount" role="status" aria-live="polite">Loading the project checklist…</p><div><button class="text-button" id="resetFilters" type="button">Reset filters</button><button class="text-button" id="downloadCsv" type="button">Download CSV <span aria-hidden="true">↓</span></button></div></div>
+          <p class="personal-note" id="personalNote" hidden>Your watchlist is private to this browser. It doesn’t change project statuses or anyone else’s view.</p>
+          <div id="taskList" class="task-list" aria-busy="true"><div class="loading-state"><span class="live-dot"></span> Tuning in to the development log…</div></div>
+          <div class="load-more" id="loadMoreWrap" hidden><button id="loadMore" class="outline-button" type="button">Show more items <span aria-hidden="true">↓</span></button><p id="shownCount"></p></div>
+          <div class="empty-state" id="emptyState" hidden><span aria-hidden="true">⌁</span><h3>No items on this frequency.</h3><p>Try another search or clear a filter. For a watchlist, use the bookmark beside an item.</p><button class="outline-button" id="emptyReset" type="button">Show all work</button></div>
+          <p class="list-footnote">Bookmarks are personal. Published statuses come from the dated master audit and are updated by the project owner.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap reading-guide" id="howToRead" aria-labelledby="guideHeading">
+      <div><p class="eyebrow">A NOTE ON THE NUMBERS</p><h2 id="guideHeading">Honest progress.<br><span>No mystery percentages.</span></h2></div>
+      <div class="guide-copy"><p>This is a development tracker, not a promise that every feature is already in the game. A plan describes an idea. A vector draft describes proposed geometry. A compiled build still needs a look and a walk around in DayZ.</p><p><strong>Needs evidence</strong> means the audit couldn’t verify the outcome. <strong>Blocked</strong> means there’s a known issue or approval gate. <strong>Approved sample</strong> covers only the particular version and location recorded.</p><p>Internal files, raw logs and personal notes stay private. The public board shares the useful status, acceptance criteria and next steps. The audit date tells you when those claims were checked.</p></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="wrap footer-inner"><div><a href="../" class="footer-brand">WIGHT <span>SIGNAL</span></a><p>A familiar island. A world in the making.</p></div><div class="footer-meta"><span id="footerDate">Evidence-based development tracker</span><a href="../">Back to the island <span aria-hidden="true">↗</span></a><small>Unofficial community DayZ map project.</small></div></div></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <noscript><div class="noscript">This interactive checklist needs JavaScript. The project is still in development. <a href="../">Return to Wight Signal</a>.</div></noscript>
+</body>
+</html>

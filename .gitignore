@@ -1,0 +1,9 @@
+# Static site source: keep credentials and local deployment metadata out.
+.env
+.env.*
+*.key
+*.pem
+website-backups/
+node_modules/
+.DS_Store
+Thumbs.db
